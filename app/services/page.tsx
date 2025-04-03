@@ -12,7 +12,7 @@ export default function Services() {
 
       {/* Hero Section */}
       <AnimateOnScroll variant="fade-down">
-        <section className="bg-gray-100 relative">
+        <section className="bg-gray-100 relative pt-16">
           <div className="container mx-auto px-4 py-20 flex flex-col items-center text-center">
             <div className="max-w-3xl text-center">
               <h1 className="text-3xl md:text-4xl font-medium font-['Lexend_Peta'] mb-8 uppercase tracking-wide">

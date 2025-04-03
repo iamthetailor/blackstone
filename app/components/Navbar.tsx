@@ -8,12 +8,10 @@ import { Button } from './Button'
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(true)
   
   // Handle scroll and initial animation
   useEffect(() => {
-    setMounted(true)
-    
     const handleScroll = () => {
       if (window.scrollY > 10) {
         setIsScrolled(true)
@@ -44,7 +42,7 @@ export function Navbar() {
   return (
     <nav className={`bg-white py-4 fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
       isScrolled ? 'shadow-md' : 'shadow-sm'
-    } ${mounted ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
+    } opacity-100`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center relative z-20 transition-transform duration-300 hover:scale-105">
@@ -58,14 +56,11 @@ export function Navbar() {
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
-            {['Home', 'Services', 'About Us', 'Contact'].map((item, index) => (
+            {['Home', 'Services', 'About Us', 'Contact Us'].map((item, index) => (
               <Link 
                 key={item} 
                 href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
-                className={`text-black hover:text-gray-600 font-medium font-['Lexend_Peta'] uppercase tracking-wide text-sm relative group transition-all duration-300 ${
-                  mounted ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-                }`}
-                style={{ transitionDelay: `${100 + index * 75}ms` }}
+                className={`text-black hover:text-gray-600 font-medium font-['Lexend_Peta'] uppercase tracking-wide text-sm relative group transition-all duration-300 opacity-100`}
               >
                 {item}
                 <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -73,10 +68,7 @@ export function Navbar() {
             ))}
             <Link 
               href="/get-a-quote"
-              className={`transition-all duration-300 ${
-                mounted ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-              }`}
-              style={{ transitionDelay: '400ms' }}
+              className="transition-all duration-300 opacity-100"
             >
               <Button variant="default" size="lg" className="min-w-[180px] justify-center rounded-none hover:bg-white hover:text-black transition-all hover:translate-y-[-5px]">
                 Get a Quote
@@ -104,7 +96,7 @@ export function Navbar() {
         >
           <div className="container mx-auto px-4 h-full flex flex-col">
             <div className="flex-1 flex flex-col justify-center items-center text-center space-y-8 py-20">
-              {['Home', 'Services', 'About', 'Contact'].map((item, index) => (
+              {['Home', 'Services', 'About', 'Contact Us'].map((item, index) => (
                 <Link 
                   key={item}
                   href={item === 'Home' ? '/' : `/${item.toLowerCase()}-us`}

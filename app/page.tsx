@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
       
       {/* Hero Section - Modern Redesign */}
-      <section className="relative h-[75vh] flex items-center">
+      <section className="relative h-[75vh] flex items-center pt-16">
         {/* Hero Background */}
         <div className="absolute inset-0 z-0">
           <Image 
