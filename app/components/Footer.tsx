@@ -93,7 +93,7 @@ export function Footer() {
             </h3>
             <div className="flex justify-center md:justify-end space-x-4">
               <a 
-                href="https://www.linkedin.com/company/blackstone-contracting/" 
+                href="https://www.linkedin.com/company/blackstonecontractingllc/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white transition-transform duration-300 hover:scale-110 hover:bg-gray-800"

@@ -127,7 +127,7 @@ export function Navbar() {
               isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`} style={{ transitionDelay: '400ms' }}>
               <a 
-                href="https://www.linkedin.com/company/blackstone-contracting/" 
+                href="https://www.linkedin.com/company/blackstonecontractingllc/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-500 hover:text-black transition-colors transform hover:scale-110 transition-transform duration-300"
