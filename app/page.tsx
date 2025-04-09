@@ -73,11 +73,12 @@ export default function Home() {
                 </h2>
                 <div className="h-1 w-16 bg-black mt-5"></div>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  We don't believe in one-size-fits-all solutions. Blackstone Contracting LLC specializes in creating customized staffing solutions to address your specific needs, from temporary staffing to permanent placements.
+                  We don't believe in one-size-fits-all solutions. Our Blackstone team specializes in creating customized staffing solutions to address your specific needs, from temporary staffing to permanent placements.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Our dedicated team works closely with you to understand your unique requirements and deliver exceptional talent that meets your project demands.
                 </p>
+                
                 <div className="mt-10 flex flex-col sm:flex-row gap-6 sm:items-center">
                   <Button href="/about-us" variant="default" size="lg" className="justify-center px-8 rounded-none hover:translate-y-[-5px] transition-transform duration-300">
                     <span className="flex items-center gap-2">
@@ -99,6 +100,20 @@ export default function Home() {
                       <span className="text-3xl font-bold">10+</span>
                       <span className="text-sm text-gray-500 uppercase">Years Experience</span>
                     </div>
+                  </div>
+                </div>
+                
+                {/* Trusted by section */}
+                <div className="mt-10">
+                  <div className="flex items-center">
+                    <p className="font-medium text-gray-600 mr-4">Trusted by</p>
+                    <Image 
+                      src="/images/james-hardie-vector-logo.svg" 
+                      alt="James Hardie" 
+                      width={150} 
+                      height={50} 
+                      className="h-auto opacity-90 transition-opacity hover:opacity-100" 
+                    />
                   </div>
                 </div>
               </div>
@@ -425,7 +440,6 @@ export default function Home() {
         </div>
       </section>
       
-      
       {/* Benefits Section - Inspired by Reference */}
       <section className="pb-24 bg-black text-white">
         <div className="container mx-auto px-6 text-center">
@@ -460,7 +474,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl uppercase font-medium mb-4 font-['Lexend_Peta']">COST SAVINGS</h3>
                 <p className="text-gray-300 text-center">
-                  Outsourcing staffing needs to a specialized service like ours leads to significant cost savings in recruitment, training, benefits, tax filings, and other though fixed costs.
+                  By partnering with our specialized staffing services, you save valuable time and resources typically spent on recruitment, onboarding, and workforce management.
                 </p>
               </div>
             </AnimateOnScroll>
@@ -469,12 +483,12 @@ export default function Home() {
               <div className="flex flex-col items-center">
                 <div className="mb-5 text-white">
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 8V12L14 14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 8V12L14 14M21 12C21 16.4183 16.9706 20 12 20C10.4607 20 9.01172 19.6565 7.74467 19.0511L3 20L4.39499 16.28C3.51156 15.0423 3 13.5743 3 12C3 7.58172 7.02944 4 12 4C16.9706 4 21 7.58172 21 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <h3 className="text-xl uppercase font-medium mb-4 font-['Lexend_Peta']">TIME OPTIMIZATION</h3>
                 <p className="text-gray-300 text-center">
-                  Staffing solutions eliminate wasted time on administrative paperwork, call-outs, and scheduling conflicts. Our managed services ensure your projects stay on target.
+                  Blackstone's staffing solutions eliminate wasted time on administrative paperwork, call-outs, and scheduling conflicts. Our managed services ensure your projects stay on target.
                 </p>
               </div>
             </AnimateOnScroll>
@@ -688,6 +702,46 @@ export default function Home() {
               </Button>
             </div>
           </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* Homeowners Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto bg-gray-50 rounded-lg p-12 shadow-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <AnimateOnScroll variant="fade-right">
+                <div>
+                  <p className="text-sm font-medium tracking-[0.2em] uppercase text-gray-500 mb-3 font-['Lexend_Peta']">RESIDENTIAL SERVICES</p>
+                  <h2 className="text-3xl uppercase font-medium font-['Lexend_Peta'] mb-6">
+                    ARE YOU A HOMEOWNER?
+                  </h2>
+                  <div className="h-1 w-16 bg-black mb-6"></div>
+                  <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                    While we excel at commercial and multi-family projects, Blackstone Contracting is proud to also serve homeowners with the same level of quality and professionalism.
+                  </p>
+                  <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                    From siding and window installations to deck rebuilding and dry rot repairs, our skilled team is equipped to enhance your home with precision craftsmanship and attention to detail.
+                  </p>
+                  <Button href="/get-a-quote" variant="default" size="lg" className="rounded-none hover:translate-y-[-5px] transition-all duration-300">
+                    Get Started
+                  </Button>
+                </div>
+              </AnimateOnScroll>
+              <AnimateOnScroll variant="fade-left">
+                <div className="relative">
+                  <div className="absolute -right-4 -bottom-4 w-full h-full border-2 border-black rounded-lg"></div>
+                  <Image 
+                    src="https://images.pexels.com/photos/3990359/pexels-photo-3990359.jpeg" 
+                    alt="Modern Home Exterior" 
+                    width={600} 
+                    height={400} 
+                    className="w-full h-auto rounded-lg shadow-xl relative z-10" 
+                  />
+                </div>
+              </AnimateOnScroll>
+            </div>
+          </div>
         </div>
       </section>
       

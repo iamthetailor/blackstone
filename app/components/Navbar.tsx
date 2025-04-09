@@ -50,7 +50,7 @@ export function Navbar() {
               src="/images/black-stone-md-black-logo.png" 
               alt="Blackstone Contracting" 
               width={180} 
-              height={40} 
+              height={60} 
               className="h-auto" 
             />
           </Link>

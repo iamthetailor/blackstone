@@ -41,7 +41,7 @@ export default function AboutUs() {
                 </p>
                 <p className="text-gray-700 text-lg mb-8 leading-relaxed">
                   Our mission is to transform your construction experience into a journey defined by ease, reliability, and trust. 
-                  Over the past three years, Blackstone Contracting has swiftly made its mark in the Portland Metro area, backed by 
+                  Over the past three years, Blackstone Contracting has swiftly made its mark in the Portland Metro area, Washington, and the broader Pacific Northwest, backed by 
                   over 15 years of industry expertise.
                 </p>
               </div>

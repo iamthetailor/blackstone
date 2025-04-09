@@ -6,9 +6,12 @@ import Link from 'next/link'
 
 export function Footer() {
   const [isVisible, setIsVisible] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const footerRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
+    setMounted(true)
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -34,50 +37,62 @@ export function Footer() {
   }, [])
 
   const getAnimationClass = (index: number) => {
+    if (!mounted) return 'opacity-0 translate-y-8'
+    
     return isVisible 
       ? `opacity-100 translate-y-0 transition-all duration-700 ease-out delay-[${index * 100}ms]` 
       : 'opacity-0 translate-y-8'
   }
 
   return (
-    <footer ref={footerRef} className="py-16 bg-white relative overflow-hidden">
-      {/* Subtle background animation */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-black to-transparent opacity-5"></div>
+    <footer 
+      ref={footerRef} 
+      className={`py-16 bg-white relative overflow-hidden ${mounted ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}
+    >
+      {/* Animated footer line */}
+      <div 
+        className={`absolute top-0 left-0 w-full h-1 ${isVisible ? 'scale-x-100' : 'scale-x-0'} transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-black to-transparent opacity-5`}
+      ></div>
       
       <div className="container mx-auto px-4">
         <div className={`flex justify-center mb-8 ${getAnimationClass(0)}`}>
-          <Link href="/" className="transition-transform duration-300 hover:scale-105">
-            <Image 
-              src="/images/black-stone-md-black-logo.png" 
-              alt="Blackstone Contracting" 
-              width={180} 
-              height={40} 
-              className="h-auto" 
-            />
-          </Link>
+          <Image 
+            src="/images/black-stone-md-black-logo.png" 
+            alt="Blackstone Contracting" 
+            width={180} 
+            height={60} 
+            className="h-auto" 
+          />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div className={`text-center md:text-left ${getAnimationClass(1)}`}>
-            <h3 className="text-lg font-medium font-['Lexend_Peta'] mb-4 uppercase relative inline-block">
+            <h3 className="text-lg font-medium font-['Lexend_Peta'] mb-4 uppercase relative inline-block group">
               Contact Us
               <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
             </h3>
-            <p className="mb-2 transition-all duration-300 hover:translate-x-1">PO Box 283</p>
-            <p className="mb-2 transition-all duration-300 hover:translate-x-1">West Linn, OR 97068</p>
-            <p className="mb-2 transition-all duration-300 hover:translate-x-1">Phone: (503) 210-5197</p>
-            <p className="mb-2 transition-all duration-300 hover:translate-x-1">Email: info@blackstonecontractingllc.com</p>
+            <p className="mb-2 transition-all duration-300 hover:translate-x-1 cursor-default">PO Box 283</p>
+            <p className="mb-2 transition-all duration-300 hover:translate-x-1 cursor-default">West Linn, OR 97068</p>
+            <p className="mb-2 transition-all duration-300 hover:translate-x-1 cursor-default">
+              <a href="tel:5032105197" className="hover:underline">Phone: (503) 210-5197</a>
+            </p>
+            <p className="mb-2 transition-all duration-300 hover:translate-x-1 cursor-default">
+              <a href="mailto:info@blackstonecontractingllc.com" className="hover:underline">Email: info@blackstonecontractingllc.com</a>
+            </p>
           </div>
           <div className={`text-center ${getAnimationClass(2)}`}>
-            <h3 className="text-lg font-medium font-['Lexend_Peta'] mb-4 uppercase relative inline-block">
+            <h3 className="text-lg font-medium font-['Lexend_Peta'] mb-4 uppercase relative inline-block group">
               Quick Links
               <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
             </h3>
             <ul className="space-y-2">
               {['Home', 'Services', 'About Us', 'Contact Us', 'Get a Quote'].map((item, index) => (
-                <li key={item} className="transition-all duration-300 hover:-translate-y-1">
+                <li 
+                  key={item} 
+                  className={`transition-all duration-300 hover:-translate-y-1 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'} transition-all duration-700 delay-[${(index + 3) * 100}ms]`}
+                >
                   <Link 
                     href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`} 
-                    className="hover:underline relative inline-block"
+                    className="hover:underline relative inline-block group"
                   >
                     <span className="relative z-10">{item}</span>
                     <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -87,7 +102,7 @@ export function Footer() {
             </ul>
           </div>
           <div className={`text-center md:text-right ${getAnimationClass(3)}`}>
-            <h3 className="text-lg font-medium font-['Lexend_Peta'] mb-4 uppercase relative inline-block">
+            <h3 className="text-lg font-medium font-['Lexend_Peta'] mb-4 uppercase relative inline-block group">
               Follow Us
               <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
             </h3>
@@ -96,7 +111,8 @@ export function Footer() {
                 href="https://www.linkedin.com/company/blackstonecontractingllc/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white transition-transform duration-300 hover:scale-110 hover:bg-gray-800"
+                className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:bg-gray-800"
+                aria-label="LinkedIn"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
@@ -108,7 +124,8 @@ export function Footer() {
                 href="https://www.instagram.com/blackstonecontracting/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white transition-transform duration-300 hover:scale-110 hover:bg-gray-800"
+                className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:bg-gray-800"
+                aria-label="Instagram"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -120,7 +137,9 @@ export function Footer() {
           </div>
         </div>
         <div className={`border-t border-gray-200 pt-8 ${getAnimationClass(4)}`}>
-          <p className="text-center">© {new Date().getFullYear()} BLACKSTONE CONTRACTING LLC. All Rights Reserved.</p>
+          <p className={`text-center ${isVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000 delay-700`}>
+            © {new Date().getFullYear()} BLACKSTONE CONTRACTING LLC. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>

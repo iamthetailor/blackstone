@@ -35,7 +35,7 @@ export default function Services() {
       <section className="py-28">
         <div className="container mx-auto px-6">
           <AnimateOnScroll variant="fade-right" className="w-full">
-            <div id="siding" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
+            <div id="siding" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24 scroll-mt-28">
               <div>
                 <h2 className="text-2xl uppercase font-medium font-['Lexend_Peta'] mb-8 relative">
                   Siding Installation
@@ -46,7 +46,7 @@ export default function Services() {
                   of your building. We work with a wide range of materials to meet your specific needs and aesthetic preferences.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  From traditional vinyl and wood siding to modern fiber cement and composite materials, we ensure precision 
+                  From wood siding to modern fiber cement and composite materials, we ensure precision 
                   installation that protects your structure while elevating its visual appeal.
                 </p>
               </div>
@@ -66,7 +66,7 @@ export default function Services() {
           </AnimateOnScroll>
 
           <AnimateOnScroll variant="fade-left" delay={100} className="w-full">
-            <div id="windows" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
+            <div id="windows" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24 scroll-mt-28">
               <div className="order-2 md:order-1 rounded-xl overflow-hidden shadow-xl group transition-all duration-500 hover:shadow-2xl">
                 <div className="relative overflow-hidden">
                   <Image 
@@ -97,7 +97,7 @@ export default function Services() {
           </AnimateOnScroll>
 
           <AnimateOnScroll variant="fade-right" delay={100} className="w-full">
-            <div id="doors" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
+            <div id="doors" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24 scroll-mt-28">
               <div>
                 <h2 className="text-2xl uppercase font-medium font-['Lexend_Peta'] mb-8 relative">
                   Door Installation
@@ -128,7 +128,7 @@ export default function Services() {
           </AnimateOnScroll>
 
           <AnimateOnScroll variant="fade-left" delay={100} className="w-full">
-            <div id="sliding-doors" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
+            <div id="sliding-doors" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24 scroll-mt-28">
               <div className="order-2 md:order-1 rounded-xl overflow-hidden shadow-xl group transition-all duration-500 hover:shadow-2xl">
                 <div className="relative overflow-hidden">
                   <Image 
@@ -159,7 +159,7 @@ export default function Services() {
           </AnimateOnScroll>
 
           <AnimateOnScroll variant="fade-right" delay={100} className="w-full">
-            <div id="deck" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
+            <div id="deck" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24 scroll-mt-28">
               <div>
                 <h2 className="text-2xl uppercase font-medium font-['Lexend_Peta'] mb-8 relative">
                   Deck Rebuilding
@@ -190,7 +190,7 @@ export default function Services() {
           </AnimateOnScroll>
 
           <AnimateOnScroll variant="fade-left" delay={100} className="w-full">
-            <div id="repairs" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div id="repairs" className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center scroll-mt-28">
               <div className="order-2 md:order-1 rounded-xl overflow-hidden shadow-xl group transition-all duration-500 hover:shadow-2xl">
                 <div className="relative overflow-hidden">
                   <Image 
