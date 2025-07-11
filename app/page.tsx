@@ -126,7 +126,7 @@ export default function Home() {
                 
                 <div className="relative z-10 overflow-hidden">
                   <Image 
-                    src="/images/DSC00839.jpeg"
+                    src="/images/DSC00839.JPEG"
                     alt="Construction Worker" 
                     width={600}
                     height={500}
@@ -224,7 +224,7 @@ export default function Home() {
                 <div className="relative group transform transition-all duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/90 z-10 transition-opacity group-hover:opacity-90 opacity-70 rounded-xl"></div>
                   <Image
-                    src="/images/DSC00774.jpeg"
+                    src="/images/DSC00774.JPEG"
                     alt="Siding Installation"
                     width={400}
                     height={250}
@@ -406,7 +406,7 @@ export default function Home() {
                 <div className="relative group transform transition-all duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/90 z-10 transition-opacity group-hover:opacity-90 opacity-70 rounded-xl"></div>
                   <Image
-                    src="/images/IMG_3537.jpeg"
+                    src="/images/IMG_3537.JPEG"
                     alt="Dry Rot Repairs"
                     width={400}
                     height={250}

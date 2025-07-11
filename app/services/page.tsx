@@ -53,7 +53,7 @@ export default function Services() {
               <div className="rounded-xl overflow-hidden shadow-xl group transition-all duration-500 hover:shadow-2xl">
                 <div className="relative overflow-hidden">
                   <Image 
-                    src="/images/DSC00774.jpeg" 
+                    src="/images/DSC00774.JPEG" 
                     alt="Siding Installation" 
                     width={600} 
                     height={400} 
@@ -194,7 +194,7 @@ export default function Services() {
               <div className="order-2 md:order-1 rounded-xl overflow-hidden shadow-xl group transition-all duration-500 hover:shadow-2xl">
                 <div className="relative overflow-hidden">
                   <Image 
-                    src="/images/IMG_3537.jpeg" 
+                    src="/images/IMG_3537.JPEG" 
                     alt="Dry Rot Repairs" 
                     width={600} 
                     height={400} 
