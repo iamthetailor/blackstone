@@ -18,7 +18,7 @@ export default function Home() {
         {/* Hero Background */}
         <div className="absolute inset-0 z-0">
           <Image 
-            src="https://images.pexels.com/photos/209266/pexels-photo-209266.jpeg"
+            src="/images/hero-shot.JPEG"
             alt="Construction Team"
             fill
             priority
@@ -126,7 +126,7 @@ export default function Home() {
                 
                 <div className="relative z-10 overflow-hidden">
                   <Image 
-                    src="https://images.pexels.com/photos/585418/pexels-photo-585418.jpeg"
+                    src="/images/DSC00839.jpeg"
                     alt="Construction Worker" 
                     width={600}
                     height={500}
@@ -224,7 +224,7 @@ export default function Home() {
                 <div className="relative group transform transition-all duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/90 z-10 transition-opacity group-hover:opacity-90 opacity-70 rounded-xl"></div>
                   <Image
-                    src="https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg"
+                    src="/images/DSC00774.jpeg"
                     alt="Siding Installation"
                     width={400}
                     height={250}
@@ -262,7 +262,7 @@ export default function Home() {
                 <div className="relative group transform transition-all duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/90 z-10 transition-opacity group-hover:opacity-90 opacity-70 rounded-xl"></div>
                   <Image
-                    src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg"
+                    src="/images/IMG_0858.jpeg"
                     alt="Window Installation"
                     width={400}
                     height={250}
@@ -298,7 +298,7 @@ export default function Home() {
                 <div className="relative group transform transition-all duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/90 z-10 transition-opacity group-hover:opacity-90 opacity-70 rounded-xl"></div>
                   <Image
-                    src="https://images.pexels.com/photos/277559/pexels-photo-277559.jpeg"
+                    src="/images/IMG_5322.jpeg"
                     alt="Door Installation"
                     width={400}
                     height={250}
@@ -332,7 +332,7 @@ export default function Home() {
                 <div className="relative group transform transition-all duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/90 z-10 transition-opacity group-hover:opacity-90 opacity-70 rounded-xl"></div>
                   <Image
-                    src="https://images.pexels.com/photos/8134753/pexels-photo-8134753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    src="/images/IMG_0660.jpeg"
                     alt="Sliding Glass Door Installation"
                     width={400}
                     height={250}
@@ -406,7 +406,7 @@ export default function Home() {
                 <div className="relative group transform transition-all duration-300 hover:-translate-y-2 cursor-pointer">
                   <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/90 z-10 transition-opacity group-hover:opacity-90 opacity-70 rounded-xl"></div>
                   <Image
-                    src="https://images.pexels.com/photos/6474343/pexels-photo-6474343.jpeg"
+                    src="/images/IMG_3537.jpeg"
                     alt="Dry Rot Repairs"
                     width={400}
                     height={250}
@@ -469,7 +469,7 @@ export default function Home() {
               <div className="flex flex-col items-center">
                 <div className="mb-5 text-white">
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 17V17.5V18M12 6V6.5V7M8.5 19.5L15.5 4.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 17V17.5V18M12 6V6.5V7M8.5 19.5L15.5 4.5M21 12C21 16.9706 16.9706 20 12 20C7.02944 20 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <h3 className="text-xl uppercase font-medium mb-4 font-['Lexend_Peta']">COST SAVINGS</h3>
@@ -512,7 +512,7 @@ export default function Home() {
             <AnimateOnScroll variant="fade-right" className="md:col-span-7">
               <div className="rounded-lg overflow-hidden">
                 <Image 
-                  src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg"
+                  src="/images/IMG_6942.jpeg"
                   alt="Construction Site" 
                   width={700}
                   height={500}
@@ -562,143 +562,98 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Case Studies Section - Modern Redesign */}
-      <section className="py-28 bg-gray-50 relative overflow-hidden">
-        {/* Background accent elements */}
-        <div className="absolute right-0 bottom-0 w-72 h-72 bg-gray-100 rounded-full translate-y-1/2 translate-x-1/2 z-0"></div>
-        <div className="absolute left-0 top-0 w-48 h-48 bg-gray-100 rounded-full -translate-y-1/2 -translate-x-1/2 z-0"></div>
-        
-        <div className="container mx-auto px-6 relative z-10">
+      {/* Testimonials Section */}
+      <section className="py-28 bg-gray-50 relative">
+        <div className="container mx-auto px-6">
           <AnimateOnScroll variant="fade-up">
-            <div className="text-center mb-16">
-              <p className="text-sm font-medium tracking-[0.2em] uppercase text-gray-500 mb-3 font-['Lexend_Peta']">CASE STUDIES</p>
-              <h2 className="text-3xl uppercase font-medium font-['Lexend_Peta'] mb-4">
-                SUCCESS STORIES
+            <div className="text-center mb-20">
+              <h2 className="text-4xl uppercase font-medium font-['Lexend_Peta'] text-gray-900">
+                What Our Clients Say
               </h2>
-              <div className="h-1 w-16 bg-black mx-auto mb-6"></div>
-              <p className="max-w-2xl mx-auto text-gray-600">
-                See how our tailored solutions have helped clients across various projects achieve exceptional results.
-              </p>
             </div>
           </AnimateOnScroll>
           
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <AnimateOnScroll variant="fade-up" delay={0.1}>
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                <div className="bg-black text-white p-6 relative">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center font-bold text-xl mr-4 aspect-square">
-                      70<span className="text-sm">%</span>
-                    </div>
-                    <h3 className="text-lg font-medium font-['Lexend_Peta'] uppercase">FASTER PROJECT COMPLETION</h3>
-                  </div>
-                  <div className="h-1 w-12 bg-white mb-4"></div>
-                  <p className="text-gray-300 mb-1 text-sm">
-                    Lumber Warehouse Project
-                  </p>
-                  <div className="absolute -bottom-4 right-6 w-8 h-8 bg-white rounded-full flex items-center justify-center transform rotate-45 group-hover:rotate-[225deg] transition-all duration-300">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12H19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M12 5L19 12L12 19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                </div>
-                <div className="p-6 flex-grow flex flex-col">
-                  <blockquote className="italic text-gray-600 mb-6 flex-grow">
-                    "Blackstone helped us fill a significant workforce gap quickly and with exceptional quality candidates. Their thorough screening process and follow-up support were invaluable to our team."
+              <div className="relative h-full bg-white p-8 shadow-sm group">
+                <div className="absolute top-0 left-0 w-16 h-16 bg-black/[0.02] group-hover:bg-black/[0.04] transition-colors duration-300"></div>
+                <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-black/10 group-hover:border-black/20 transition-colors duration-300"></div>
+                <div className="relative z-10 flex flex-col h-full pt-4">
+                  <blockquote className="text-lg text-gray-600 leading-relaxed mb-8 flex-grow">
+                    Blackstone has proven to be a reliable partner when it comes to labor staffing. They consistently supply qualified, dependable workers across a range of trades and project types. Their communication is strong, they respond quickly to staffing needs, and they show good flexibility when project demands change.
                   </blockquote>
-                  <footer className="mt-auto">
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 rounded-full bg-gray-200 mr-3"></div>
-                      <div>
-                        <p className="font-medium">Michael Rodriguez</p>
-                        <p className="text-gray-500 text-sm">Project Manager</p>
+                  <div>
+                    <div className="mb-4">
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
                       </div>
                     </div>
-                  </footer>
+                    <div className="font-medium text-gray-900 text-lg">Brad Snodgrass</div>
+                    <div className="text-gray-500">Director of Maintenance Sales — Finnmark Property Services</div>
+                  </div>
                 </div>
               </div>
             </AnimateOnScroll>
-            
+
             <AnimateOnScroll variant="fade-up" delay={0.2}>
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                <div className="bg-black text-white p-6 relative">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center font-bold text-xl mr-4 aspect-square">
-                      85<span className="text-sm">%</span>
-                    </div>
-                    <h3 className="text-lg font-medium font-['Lexend_Peta'] uppercase">REDUCED HIRING TIME</h3>
-                  </div>
-                  <div className="h-1 w-12 bg-white mb-4"></div>
-                  <p className="text-gray-300 mb-1 text-sm">
-                    Commercial Construction Project
-                  </p>
-                  <div className="absolute -bottom-4 right-6 w-8 h-8 bg-white rounded-full flex items-center justify-center transform rotate-45 group-hover:rotate-[225deg] transition-all duration-300">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12H19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M12 5L19 12L12 19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                </div>
-                <div className="p-6 flex-grow flex flex-col">
-                  <blockquote className="italic text-gray-600 mb-6 flex-grow">
-                    "Blackstone's ability to deliver qualified workers at short notice has transformed our project management. We've been able to scale up quickly while maintaining quality standards."
+              <div className="relative h-full bg-white p-8 shadow-sm group">
+                <div className="absolute top-0 left-0 w-16 h-16 bg-black/[0.02] group-hover:bg-black/[0.04] transition-colors duration-300"></div>
+                <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-black/10 group-hover:border-black/20 transition-colors duration-300"></div>
+                <div className="relative z-10 flex flex-col h-full pt-4">
+                  <blockquote className="text-lg text-gray-600 leading-relaxed mb-8 flex-grow">
+                    As the owner of Dagmar Construction, I've had the pleasure of working with Blackstone Construction. They are our preferred installer for our exterior projects, and I can confidently say they're a cut above the rest. Their team consistently delivers top-notch craftsmanship and brings a level of professionalism that makes them a trusted partner.
                   </blockquote>
-                  <footer className="mt-auto">
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 rounded-full bg-gray-200 mr-3"></div>
-                      <div>
-                        <p className="font-medium">Sarah Williams</p>
-                        <p className="text-gray-500 text-sm">Operations Director</p>
+                  <div>
+                    <div className="mb-4">
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
                       </div>
                     </div>
-                  </footer>
+                    <div className="font-medium text-gray-900 text-lg">Erik Brigham</div>
+                    <div className="text-gray-500">Owner — Dagmar Construction</div>
+                  </div>
                 </div>
               </div>
             </AnimateOnScroll>
-            
+
             <AnimateOnScroll variant="fade-up" delay={0.3}>
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                <div className="bg-black text-white p-6 relative">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center font-bold text-xl mr-4 aspect-square">
-                      92<span className="text-sm">%</span>
-                    </div>
-                    <h3 className="text-lg font-medium font-['Lexend_Peta'] uppercase">CLIENT RETENTION</h3>
-                  </div>
-                  <div className="h-1 w-12 bg-white mb-4"></div>
-                  <p className="text-gray-300 mb-1 text-sm">
-                    Multi-Phase Development
-                  </p>
-                  <div className="absolute -bottom-4 right-6 w-8 h-8 bg-white rounded-full flex items-center justify-center transform rotate-45 group-hover:rotate-[225deg] transition-all duration-300">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12H19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M12 5L19 12L12 19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                </div>
-                <div className="p-6 flex-grow flex flex-col">
-                  <blockquote className="italic text-gray-600 mb-6 flex-grow">
-                    "The talented workforce provided by Blackstone helped us complete our multi-phase construction project ahead of schedule. Their responsiveness and ability to find skilled workers sets them apart."
+              <div className="relative h-full bg-white p-8 shadow-sm group">
+                <div className="absolute top-0 left-0 w-16 h-16 bg-black/[0.02] group-hover:bg-black/[0.04] transition-colors duration-300"></div>
+                <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-black/10 group-hover:border-black/20 transition-colors duration-300"></div>
+                <div className="relative z-10 flex flex-col h-full pt-4">
+                  <blockquote className="text-lg text-gray-600 leading-relaxed mb-8 flex-grow">
+                    Whether it's commercial or residential, Blackstone always delivers quick and quality work. Their skilled and qualified workforce and their management of their crews set them far apart from any other company. Having them on a project is peace of mind.
                   </blockquote>
-                  <footer className="mt-auto">
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 rounded-full bg-gray-200 mr-3"></div>
-                      <div>
-                        <p className="font-medium">James Thompson</p>
-                        <p className="text-gray-500 text-sm">General Contractor</p>
+                  <div>
+                    <div className="mb-4">
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
                       </div>
                     </div>
-                  </footer>
+                    <div className="font-medium text-gray-900 text-lg">Dillon DeSean</div>
+                    <div className="text-gray-500">Project Consultant</div>
+                  </div>
                 </div>
               </div>
             </AnimateOnScroll>
           </div>
-          
+
           <AnimateOnScroll variant="fade-up" delay={0.4}>
-            <div className="text-center mt-16">
-              <Button href="/get-a-quote" variant="default" size="lg" className="rounded-none hover:translate-y-[-5px] transition-all duration-300">
-                REQUEST A CONSULTATION
+            <div className="text-center mt-20">
+              <Button href="/get-a-quote" variant="default" size="lg" className="rounded-none hover:bg-black hover:text-white transition-all hover:translate-y-[-5px]">
+                START YOUR PROJECT
               </Button>
             </div>
           </AnimateOnScroll>
@@ -732,7 +687,7 @@ export default function Home() {
                 <div className="relative">
                   <div className="absolute -right-4 -bottom-4 w-full h-full border-2 border-black rounded-lg"></div>
                   <Image 
-                    src="https://images.pexels.com/photos/3990359/pexels-photo-3990359.jpeg" 
+                    src="/images/ludwick.JPEG" 
                     alt="Modern Home Exterior" 
                     width={600} 
                     height={400} 

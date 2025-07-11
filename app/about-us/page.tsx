@@ -50,7 +50,7 @@ export default function AboutUs() {
               <div className="relative">
                 <div className="absolute -top-5 -left-5 w-full h-full border-2 border-black rounded-lg"></div>
                 <Image 
-                  src="https://images.pexels.com/photos/3760529/pexels-photo-3760529.jpeg" 
+                  src="/images/IMG_3946.jpeg" 
                   alt="Blackstone Contracting Team" 
                   width={600} 
                   height={400} 
@@ -124,7 +124,7 @@ export default function AboutUs() {
       <section className="py-24 bg-gradient-to-r from-black to-gray-900 text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <Image 
-            src="https://images.pexels.com/photos/2422290/pexels-photo-2422290.jpeg" 
+            src="/images/DSC00808.jpg" 
             alt="Construction Excellence" 
             fill
             className="object-cover opacity-20" 
@@ -197,7 +197,7 @@ export default function AboutUs() {
                   </div>
                 </div>
                 <Image 
-                  src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg" 
+                  src="/images/DSC00810.jpeg" 
                   alt="General Contractors" 
                   width={500} 
                   height={300} 
@@ -224,7 +224,7 @@ export default function AboutUs() {
                   </div>
                 </div>
                 <Image 
-                  src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg" 
+                  src="/images/IMG_3343.jpeg" 
                   alt="Homeowners" 
                   width={500} 
                   height={300} 

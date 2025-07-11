@@ -1,11 +1,66 @@
+'use client';
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 import { Button } from '../components/Button'
 import { AnimateOnScroll } from '../components/AnimateOnScroll'
+import { useState, useRef } from 'react'
 
 export default function GetAQuote() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
+    setSuccess(false);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      address: formData.get('address'),
+      city: formData.get('city'),
+      state: formData.get('state'),
+      zipCode: formData.get('zipCode'),
+      projectType: formData.get('projectType'),
+      otherProjectType: formData.get('otherProjectType'),
+      propertyType: formData.get('propertyType'),
+      startDate: formData.get('startDate'),
+      projectDescription: formData.get('projectDescription'),
+      additionalInfo: formData.get('additionalInfo'),
+    };
+
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send quote request');
+      }
+
+      setSuccess(true);
+      formRef.current?.reset();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send quote request');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <main className="flex min-h-screen flex-col">
       <Navbar />
@@ -32,7 +87,18 @@ export default function GetAQuote() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <AnimateOnScroll variant="fade-up" delay={100}>
-              <form className="bg-white p-8 border border-gray-200 rounded-md shadow-sm">
+              <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-8 border border-gray-200 rounded-md shadow-sm">
+                {success && (
+                  <div className="mb-8 p-4 bg-green-50 border border-green-200 text-green-700 rounded">
+                    Thank you for your quote request! We'll get back to you soon with a detailed quote.
+                  </div>
+                )}
+                {error && (
+                  <div className="mb-8 p-4 bg-red-50 border border-red-200 text-red-700 rounded">
+                    {error}
+                  </div>
+                )}
+                
                 <h2 className="text-2xl uppercase font-medium font-['Lexend_Peta'] mb-8">Tell Us About Your Project</h2>
                 
                 {/* Personal Information */}
@@ -43,18 +109,22 @@ export default function GetAQuote() {
                       <label htmlFor="firstName" className="block mb-2 text-sm font-medium">First Name*</label>
                       <input 
                         type="text" 
+                        name="firstName"
                         id="firstName" 
                         className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black" 
                         required
+                        disabled={isLoading}
                       />
                     </div>
                     <div>
                       <label htmlFor="lastName" className="block mb-2 text-sm font-medium">Last Name*</label>
                       <input 
                         type="text" 
+                        name="lastName"
                         id="lastName" 
                         className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black" 
                         required
+                        disabled={isLoading}
                       />
                     </div>
                   </div>
@@ -63,18 +133,22 @@ export default function GetAQuote() {
                       <label htmlFor="email" className="block mb-2 text-sm font-medium">Email Address*</label>
                       <input 
                         type="email" 
+                        name="email"
                         id="email" 
                         className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black" 
                         required
+                        disabled={isLoading}
                       />
                     </div>
                     <div>
                       <label htmlFor="phone" className="block mb-2 text-sm font-medium">Phone Number*</label>
                       <input 
                         type="tel" 
+                        name="phone"
                         id="phone" 
                         className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black"
                         required
+                        disabled={isLoading}
                       />
                     </div>
                   </div>
@@ -82,8 +156,10 @@ export default function GetAQuote() {
                     <label htmlFor="address" className="block mb-2 text-sm font-medium">Address</label>
                     <input 
                       type="text" 
+                      name="address"
                       id="address" 
                       className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black"
+                      disabled={isLoading}
                     />
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
@@ -91,24 +167,30 @@ export default function GetAQuote() {
                       <label htmlFor="city" className="block mb-2 text-sm font-medium">City</label>
                       <input 
                         type="text" 
+                        name="city"
                         id="city" 
                         className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black"
+                        disabled={isLoading}
                       />
                     </div>
                     <div>
                       <label htmlFor="state" className="block mb-2 text-sm font-medium">State</label>
                       <input 
                         type="text" 
+                        name="state"
                         id="state" 
                         className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black"
+                        disabled={isLoading}
                       />
                     </div>
                     <div>
                       <label htmlFor="zipCode" className="block mb-2 text-sm font-medium">ZIP Code</label>
                       <input 
                         type="text" 
+                        name="zipCode"
                         id="zipCode" 
                         className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black"
+                        disabled={isLoading}
                       />
                     </div>
                   </div>
@@ -120,9 +202,11 @@ export default function GetAQuote() {
                   <div className="mb-6">
                     <label htmlFor="projectType" className="block mb-2 text-sm font-medium">Type of Project*</label>
                     <select 
+                      name="projectType"
                       id="projectType" 
                       className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black"
                       required
+                      disabled={isLoading}
                     >
                       <option value="">Select Project Type</option>
                       <option value="siding">Siding Installation</option>
@@ -138,17 +222,21 @@ export default function GetAQuote() {
                     <label htmlFor="otherProjectType" className="block mb-2 text-sm font-medium">If Other, Please Specify</label>
                     <input 
                       type="text" 
+                      name="otherProjectType"
                       id="otherProjectType" 
                       className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black"
+                      disabled={isLoading}
                     />
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                       <label htmlFor="propertyType" className="block mb-2 text-sm font-medium">Property Type*</label>
                       <select 
+                        name="propertyType"
                         id="propertyType" 
                         className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black"
                         required
+                        disabled={isLoading}
                       >
                         <option value="">Select Property Type</option>
                         <option value="singleFamily">Single-Family Home</option>
@@ -161,18 +249,22 @@ export default function GetAQuote() {
                       <label htmlFor="startDate" className="block mb-2 text-sm font-medium">Desired Start Date</label>
                       <input 
                         type="date" 
+                        name="startDate"
                         id="startDate" 
                         className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black"
+                        disabled={isLoading}
                       />
                     </div>
                   </div>
                   <div>
                     <label htmlFor="projectDescription" className="block mb-2 text-sm font-medium">Project Description*</label>
                     <textarea 
+                      name="projectDescription"
                       id="projectDescription" 
                       rows={5} 
                       className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black" 
                       required
+                      disabled={isLoading}
                       placeholder="Please provide details about your project, including dimensions, materials preferences, and any specific requirements."
                     ></textarea>
                   </div>
@@ -184,27 +276,25 @@ export default function GetAQuote() {
                   <div className="mb-6">
                     <label htmlFor="additionalInfo" className="block mb-2 text-sm font-medium">Any Other Information</label>
                     <textarea 
+                      name="additionalInfo"
                       id="additionalInfo" 
                       rows={4} 
                       className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black"
+                      disabled={isLoading}
                       placeholder="Please share any additional information that might help us better understand your project needs."
                     ></textarea>
                   </div>
-                  <div className="mb-6">
-                    <label className="flex items-start">
-                      <input 
-                        type="checkbox" 
-                        className="mt-1 mr-2" 
-                        required
-                      />
-                      <span className="text-sm">
-                        I agree to the processing of my personal data to receive a quote from Blackstone Contracting LLC.
-                      </span>
-                    </label>
-                  </div>
                 </div>
-                
-                <Button type="submit" variant="default" size="lg" className="min-w-[180px] justify-center rounded-none hover:bg-white hover:text-black transition-all hover:translate-y-[-5px]">Submit Request</Button>
+
+                <Button 
+                  type="submit" 
+                  variant="default" 
+                  size="lg" 
+                  className="min-w-[180px] justify-center rounded-none hover:bg-white hover:text-black transition-all hover:translate-y-[-5px]"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'SUBMITTING...' : 'SUBMIT REQUEST'}
+                </Button>
               </form>
             </AnimateOnScroll>
           </div>

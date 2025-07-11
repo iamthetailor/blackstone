@@ -1,11 +1,58 @@
+'use client';
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 import { Button } from '../components/Button'
 import { AnimateOnScroll } from '../components/AnimateOnScroll'
+import { useState, useRef } from 'react'
 
 export default function ContactUs() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
+    setSuccess(false);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send message');
+      }
+
+      setSuccess(true);
+      formRef.current?.reset();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send message');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <main className="flex min-h-screen flex-col">
       <Navbar />
@@ -70,24 +117,38 @@ export default function ContactUs() {
             <AnimateOnScroll variant="fade-left" delay={200} className="h-full">
               <div>
                 <h2 className="text-2xl uppercase font-medium font-['Lexend_Peta'] mb-8">Send Us a Message</h2>
-                <form>
+                {success && (
+                  <div className="mb-6 p-4 bg-green-50 border border-green-200 text-green-700 rounded">
+                    Thank you for your message! We'll get back to you soon.
+                  </div>
+                )}
+                {error && (
+                  <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded">
+                    {error}
+                  </div>
+                )}
+                <form ref={formRef} onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                       <label htmlFor="firstName" className="block mb-2 text-sm font-medium">First Name*</label>
                       <input 
                         type="text" 
+                        name="firstName"
                         id="firstName" 
                         className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black" 
                         required
+                        disabled={isLoading}
                       />
                     </div>
                     <div>
                       <label htmlFor="lastName" className="block mb-2 text-sm font-medium">Last Name*</label>
                       <input 
                         type="text" 
+                        name="lastName"
                         id="lastName" 
                         className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black" 
                         required
+                        disabled={isLoading}
                       />
                     </div>
                   </div>
@@ -95,38 +156,54 @@ export default function ContactUs() {
                     <label htmlFor="email" className="block mb-2 text-sm font-medium">Email Address*</label>
                     <input 
                       type="email" 
+                      name="email"
                       id="email" 
                       className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black" 
                       required
+                      disabled={isLoading}
                     />
                   </div>
                   <div className="mb-6">
                     <label htmlFor="phone" className="block mb-2 text-sm font-medium">Phone Number</label>
                     <input 
                       type="tel" 
+                      name="phone"
                       id="phone" 
                       className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black"
+                      disabled={isLoading}
                     />
                   </div>
                   <div className="mb-6">
                     <label htmlFor="subject" className="block mb-2 text-sm font-medium">Subject*</label>
                     <input 
                       type="text" 
+                      name="subject"
                       id="subject" 
                       className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black" 
                       required
+                      disabled={isLoading}
                     />
                   </div>
                   <div className="mb-6">
                     <label htmlFor="message" className="block mb-2 text-sm font-medium">Message*</label>
                     <textarea 
+                      name="message"
                       id="message" 
                       rows={5} 
                       className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-black" 
                       required
+                      disabled={isLoading}
                     ></textarea>
                   </div>
-                  <Button type="submit" variant="default" size="lg" className="min-w-[180px] justify-center rounded-none hover:bg-white hover:text-black transition-all hover:translate-y-[-5px]">SEND MESSAGE</Button>
+                  <Button 
+                    type="submit" 
+                    variant="default" 
+                    size="lg" 
+                    className="min-w-[180px] justify-center rounded-none hover:bg-white hover:text-black transition-all hover:translate-y-[-5px]"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? 'SENDING...' : 'SEND MESSAGE'}
+                  </Button>
                 </form>
               </div>
             </AnimateOnScroll>

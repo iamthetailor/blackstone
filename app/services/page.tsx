@@ -53,7 +53,7 @@ export default function Services() {
               <div className="rounded-xl overflow-hidden shadow-xl group transition-all duration-500 hover:shadow-2xl">
                 <div className="relative overflow-hidden">
                   <Image 
-                    src="https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg" 
+                    src="/images/DSC00774.jpeg" 
                     alt="Siding Installation" 
                     width={600} 
                     height={400} 
@@ -70,7 +70,7 @@ export default function Services() {
               <div className="order-2 md:order-1 rounded-xl overflow-hidden shadow-xl group transition-all duration-500 hover:shadow-2xl">
                 <div className="relative overflow-hidden">
                   <Image 
-                    src="https://images.pexels.com/photos/5997967/pexels-photo-5997967.jpeg"
+                    src="/images/IMG_0858.jpeg"
                     alt="Window Installation" 
                     width={600} 
                     height={400} 
@@ -115,7 +115,7 @@ export default function Services() {
               <div className="rounded-xl overflow-hidden shadow-xl group transition-all duration-500 hover:shadow-2xl">
                 <div className="relative overflow-hidden">
                   <Image 
-                    src="https://images.pexels.com/photos/277559/pexels-photo-277559.jpeg" 
+                    src="/images/IMG_5322.jpeg" 
                     alt="Door Installation" 
                     width={600} 
                     height={400} 
@@ -132,7 +132,7 @@ export default function Services() {
               <div className="order-2 md:order-1 rounded-xl overflow-hidden shadow-xl group transition-all duration-500 hover:shadow-2xl">
                 <div className="relative overflow-hidden">
                   <Image 
-                    src="https://images.pexels.com/photos/8134753/pexels-photo-8134753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                    src="/images/IMG_0660.jpeg" 
                     alt="Sliding Glass Door Installation" 
                     width={600} 
                     height={400} 
@@ -194,7 +194,7 @@ export default function Services() {
               <div className="order-2 md:order-1 rounded-xl overflow-hidden shadow-xl group transition-all duration-500 hover:shadow-2xl">
                 <div className="relative overflow-hidden">
                   <Image 
-                    src="https://images.pexels.com/photos/6474343/pexels-photo-6474343.jpeg" 
+                    src="/images/IMG_3537.jpeg" 
                     alt="Dry Rot Repairs" 
                     width={600} 
                     height={400} 
