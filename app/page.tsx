@@ -643,7 +643,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="font-medium text-gray-900 text-lg">Dillon DeSean</div>
-                    <div className="text-gray-500">Project Consultant</div>
+                    <div className="text-gray-500">Project Manager/Estimator - Clear Choice Windows & Doors</div>
                   </div>
                 </div>
               </div>
