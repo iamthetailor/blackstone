@@ -96,10 +96,10 @@ export function Navbar() {
         >
           <div className="container mx-auto px-4 h-full flex flex-col">
             <div className="flex-1 flex flex-col justify-center items-center text-center space-y-8 py-20">
-              {['Home', 'Services', 'About', 'Contact Us'].map((item, index) => (
+              {['Home', 'Services', 'About Us', 'Contact Us'].map((item, index) => (
                 <Link 
                   key={item}
-                  href={item === 'Home' ? '/' : `/${item.toLowerCase()}-us`}
+                  href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
                   className={`text-xl font-medium font-['Lexend_Peta'] uppercase text-black hover:text-gray-600 tracking-wide transition-all duration-300 transform hover:translate-x-2 ${
                     isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
                   }`}

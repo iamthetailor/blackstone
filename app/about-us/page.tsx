@@ -197,7 +197,7 @@ export default function AboutUs() {
                   </div>
                 </div>
                 <Image 
-                  src="/images/DSC00810.jpeg" 
+                  src="/images/DSC00810.JPEG" 
                   alt="General Contractors" 
                   width={500} 
                   height={300} 
@@ -224,7 +224,7 @@ export default function AboutUs() {
                   </div>
                 </div>
                 <Image 
-                  src="/images/IMG_3343.jpeg" 
+                  src="/images/IMG_3343.JPEG" 
                   alt="Homeowners" 
                   width={500} 
                   height={300} 

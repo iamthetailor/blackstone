@@ -199,7 +199,7 @@ export default function ContactUs() {
                     type="submit" 
                     variant="default" 
                     size="lg" 
-                    className="min-w-[180px] justify-center rounded-none hover:bg-white hover:text-black transition-all hover:translate-y-[-5px]"
+                    className="w-full md:w-auto min-w-[180px] justify-center rounded-none hover:bg-white hover:text-black transition-all hover:translate-y-[-5px]"
                     disabled={isLoading}
                   >
                     {isLoading ? 'SENDING...' : 'SEND MESSAGE'}
