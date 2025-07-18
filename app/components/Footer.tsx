@@ -85,7 +85,7 @@ export function Footer() {
               <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
             </h3>
             <ul className="space-y-2">
-              {['Home', 'Services', 'About Us', 'Contact Us', 'Get a Quote'].map((item, index) => (
+              {['Home', 'Services', 'About Us', 'Contact Us'].map((item, index) => (
                 <li 
                   key={item} 
                   className={`transition-all duration-300 hover:-translate-y-1 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'} transition-all duration-700 delay-[${(index + 3) * 100}ms]`}
@@ -99,6 +99,17 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li 
+                className={`transition-all duration-300 hover:-translate-y-1 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'} transition-all duration-700 delay-[700ms]`}
+              >
+                <Link 
+                  href="/get-a-quote" 
+                  className="hover:underline relative inline-block group"
+                >
+                  <span className="relative z-10">Get a Quote</span>
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              </li>
             </ul>
           </div>
           <div className={`text-center md:text-right ${getAnimationClass(3)}`}>
