@@ -605,7 +605,7 @@ export default function Home() {
                 <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-black/10 group-hover:border-black/20 transition-colors duration-300"></div>
                 <div className="relative z-10 flex flex-col h-full pt-4">
                   <blockquote className="text-lg text-gray-600 leading-relaxed mb-8 flex-grow">
-                    As the owner of Dagmar Construction, I've had the pleasure of working with Blackstone Construction. They are our preferred installer for our exterior projects, and I can confidently say they're a cut above the rest. Their team consistently delivers top-notch craftsmanship and brings a level of professionalism that makes them a trusted partner.
+                    As the owner of Dagmar Construction, I've had the pleasure of working with Blackstone Contracting. They are our preferred installer for our exterior projects, and I can confidently say they're a cut above the rest. Their team consistently delivers top-notch craftsmanship and brings a level of professionalism that makes them a trusted partner.
                   </blockquote>
                   <div>
                     <div className="mb-4">
