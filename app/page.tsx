@@ -130,7 +130,7 @@ export default function Home() {
                     alt="Construction Worker" 
                     width={600}
                     height={500}
-                    className="w-full h-[500px] object-cover transform transition-transform duration-700 hover:scale-105" 
+                    className="w-full h-[500px] object-cover md:object-center object-right transform transition-transform duration-700 hover:scale-105" 
                   />
                   
                   {/* Overlay gradient */}
